@@ -1,0 +1,38 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/raw/final_ml_dataset.csv
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+    params:
+      - params.yaml:
+        - preprocess
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed/train.csv
+    outs:
+      - models/model.pkl
+      - models/vectorizer.pkl
+    params:
+      - params.yaml:
+        - train
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - models/model.pkl
+      - models/vectorizer.pkl
+      - data/processed/test.csv
+    metrics:
+      - metrics.json:
+          cache: false
+    params:
+      - params.yaml:
+        - evaluate
