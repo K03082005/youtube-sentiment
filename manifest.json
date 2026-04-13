@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Sentiment Analyzer",
+  "version": "1.0",
+  "description": "Analyze YouTube comments for sentiment, verdict and content type",
+  "permissions": ["activeTab"],
+  "host_permissions": ["http://127.0.0.1:5001/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube Analyzer"
+  }
+}

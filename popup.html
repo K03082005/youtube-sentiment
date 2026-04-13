@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>YouTube Analyzer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="logo">▶</span>
+    <span class="title">YouTube Analyzer</span>
+  </div>
+
+  <!-- ANALYZE BUTTON (no query input anymore) -->
+  <button id="analyzeBtn" class="full-btn">Analyze This Video</button>
+
+  <!-- STATES -->
+  <div id="loader"   class="loader hidden">Analyzing comments...</div>
+  <div id="errorBox" class="error  hidden"></div>
+
+  <!-- RESULTS -->
+  <div id="results" class="hidden">
+
+    <!-- VERDICT -->
+    <div id="verdictBox" class="verdict-box"></div>
+
+    <!-- AUDIENCE MOOD -->
+    <div class="section-label">🧠 Audience Mood</div>
+    <div id="moodSummary" class="mood-box"></div>
+
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric-card positive">
+        <div class="metric-value" id="posCount">0</div>
+        <div class="metric-label">👍 Positive</div>
+      </div>
+      <div class="metric-card negative">
+        <div class="metric-value" id="negCount">0</div>
+        <div class="metric-label">👎 Negative</div>
+      </div>
+      <div class="metric-card neutral">
+        <div class="metric-value" id="neuCount">0</div>
+        <div class="metric-label">😐 Neutral</div>
+      </div>
+    </div>
+
+    <div class="total-label" id="totalLabel"></div>
+
+    <!-- PIE CHART -->
+    <canvas id="pieChart" width="160" height="160"></canvas>
+
+    <!-- TABS -->
+    <div class="tab-row">
+      <button class="tab-btn active" id="tab-positive">👍 Positive</button>
+      <button class="tab-btn"        id="tab-negative">👎 Negative</button>
+      <button class="tab-btn"        id="tab-neutral" >😐 Neutral</button>
+    </div>
+
+    <!-- COMMENTS -->
+    <div id="commentList" class="comment-list"></div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
