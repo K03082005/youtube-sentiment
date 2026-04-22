@@ -1,8 +1,5 @@
 # YouTube Sentiment Analyzer
 
-> **Note:** This repository is part of an academic project submission. The implementation details, pipeline architecture, and source code represent original work. Reuse, reproduction, or submission of this work — in whole or in part — without explicit permission is not allowed.
-
----
 
 A full end-to-end MLOps system that analyzes YouTube comment sentiment in real time through a Chrome Extension, Flask API, and an automated machine learning pipeline.
 
